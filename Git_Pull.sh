@@ -35,7 +35,7 @@ function Main()
 		Judge_Order "git init成功!" "git init失败!" 0
 	fi
 	#添加远程仓库 git remote add <名称> <URL>
-	git remote add origin ${repository}
+	git remote add origin ${repository} >/dev/null 2>&1
 	Judge_Order "添加远程仓库成功!" "添加远程仓库失败,远程仓库已存在!" 1
 	#解决Permission denied的问题
 	eval "$(ssh-agent -s)" ssh-add
